@@ -1,11 +1,17 @@
 import React from 'react';
 import TarjetaColor from './TarjetaColor';
 
-const TarjetasColores = () => {
+const TarjetasColores = ({colores, borrarColor}) => {
   return (
-    <section className='d-flex containerCards justify-content-center flex-wrap gap-3 mx-auto'>
-      <TarjetaColor/>
-    </section>
+    <article className='d-flex containerCards justify-content-center flex-wrap gap-3 mx-auto'>
+      {colores.map((elementoColor, posicion) => (
+          <TarjetaColor
+            key={posicion}
+            nombreColor={elementoColor}
+            borrarColor={borrarColor}
+          />
+        ))}
+    </article>
   );
 };
 

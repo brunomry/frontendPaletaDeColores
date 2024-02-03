@@ -12,7 +12,6 @@ function App() {
       <Container className="my-4 mainPage">
         <TituloPrincipal></TituloPrincipal>
         <FormularioPaletaColores/>
-        <TarjetasColores/>
       </Container>
       <Footer/>
     </>
