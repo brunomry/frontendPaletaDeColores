@@ -27,6 +27,32 @@
   background: #2296F3;
 }
 
+.btnGuardar:hover{
+  background: #1272c0;
+}
+
+.containerCards{
+  max-width: 900px;
+}
+
+.cardColor{
+  width: 250px;
+  height: 300px;
+}
+
+.containerCardColor{
+  width: 120px;
+  height: 100px;
+}
+
+.btnBorrar{
+  background: #FF3822;
+}
+
+.btnBorrar:hover{
+  background: #db210c;
+}
+
 @media all and (min-width:768px){
   .inputColor{
     width: 400px;

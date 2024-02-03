@@ -3,7 +3,7 @@ import { Button, Form } from "react-bootstrap";
 
 const FormularioPaletaColores = () => {
   return (
-    <section className="sectionForm mx-auto pt-5 pb-2 rounded-3 shadow bg-white">
+    <section className="sectionForm mx-auto pt-5 pb-2 mb-5 rounded-3 shadow bg-white">
       <h2 className="text-center mb-5">Administrar colores</h2>
       <Form className="mb-5 d-flex flex-column">
         <Form.Group className="mb-4 formGroup d-flex flex-column gap-5 flex-md-row justify-content-center align-items-center py-5 px-2">

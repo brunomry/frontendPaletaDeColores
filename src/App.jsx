@@ -4,6 +4,7 @@ import TituloPrincipal from "./components/TituloPrincipal";
 import Footer from "./components/Footer";
 import "./App.css";
 import FormularioPaletaColores from "./components/FormularioPaletaColores";
+import TarjetasColores from "./components/TarjetasColores";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Container className="my-4 mainPage">
         <TituloPrincipal></TituloPrincipal>
         <FormularioPaletaColores/>
+        <TarjetasColores/>
       </Container>
       <Footer/>
     </>
