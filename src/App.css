@@ -2,12 +2,34 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: #f1f1f1;
 }
 
 #root .mainPage{
   flex-grow: 1;
 }
 
-.navbar{
-  background: #e9e9e9;
+.sectionForm{
+  max-width: 800px;
+  min-height: 400px;
 }
+
+.formGroup{
+  background: #E3F2FD;
+}
+
+.containerColor{
+  width: 150px;
+  height: 150px;
+}
+
+.btnGuardar{
+  background: #2296F3;
+}
+
+@media all and (min-width:768px){
+  .inputColor{
+    width: 400px;
+  }
+}
+
