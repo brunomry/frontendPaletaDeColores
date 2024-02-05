@@ -23,6 +23,10 @@
   height: 150px;
 }
 
+.inputColor{
+  width: 100%;
+}
+
 .btnGuardar{
   background: #2296F3;
 }
