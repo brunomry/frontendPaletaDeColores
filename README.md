@@ -24,11 +24,11 @@ La aplicación está desplegada en Netlify. Puedes acceder a ella haciendo clic 
 
 1. Clona este repositorio en tu máquina local a través de una terminal:
 
-  git clone <[url-del-repositorio](https://github.com/brunomry/ejercicio6_tp_react.git)>
+  git clone <[url-del-repositorio](https://github.com/brunomry/PaletaDeColores_react.git)>
 
 2. Navega al directorio del proyecto:
 
-  cd ejercicio6_tp_react
+  cd PaletaDeColores_react
 
 3. Instala las dependencias del proyecto:
 
