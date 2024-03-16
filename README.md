@@ -1,10 +1,16 @@
 # Aplicación Web con React y Vite
 
-Ejercicio N°6 del Trabajo Práctico de React correspondiente al curso Desarrollador Full Stack dictado por RollingCodeSchool.
+Ejercicio N°4 del Trabajo Práctico de Backend correspondiente al curso Desarrollador Full Stack dictado por RollingCodeSchool.
 
 ## Enunciado
 
-Paleta de colores: Consiste en crear una aplicación web que contenga un formulario con un input que al presionar un botón permita guardar un color en localStorage.
+Paleta de colores: Consiste en crear una aplicación web que contenga un formulario con un input que al presionar un botón permita guardar un color. Se debe visualizar la paleta de colores. Cada color contará con al menos las siguientes propiedades: código único, nombre del color, código hexadecimal (opcional), código RGB o RGBA (opcional). Se debe poder ver en detalle, editar o borrar un color (CRUD).
+
+## Integración con proyecto de Backend
+
+Este proyecto de Frontend se integró a su proyecto Backend correspondiente donde se utilizó la base de datos no relacional de MongoDB para almacenar los datos de la paleta de colores.
+
+#### Repositorio Backend: [backendPaletaColores](https://github.com/brunomry/backendPaletaColores.git)
 
 ## Prototipo 
 
@@ -14,7 +20,7 @@ Paleta de colores: Consiste en crear una aplicación web que contenga un formula
 
 La aplicación está desplegada en Netlify. Puedes acceder a ella haciendo clic en el siguiente enlace:
 
-[ejercicio 6](https://ejercicio6-bmr.netlify.app)
+[ejercicio 4](https://paletadecolores-bmr.netlify.app)
 
 ## Requisitos
 
@@ -24,11 +30,11 @@ La aplicación está desplegada en Netlify. Puedes acceder a ella haciendo clic 
 
 1. Clona este repositorio en tu máquina local a través de una terminal:
 
-  git clone <[url-del-repositorio](https://github.com/brunomry/PaletaDeColores_react.git)>
+  git clone <[url-del-repositorio](https://github.com/brunomry/frontendPaletaDeColores.git)>
 
 2. Navega al directorio del proyecto:
 
-  cd PaletaDeColores_react
+  cd frontendPaletaDeColores
 
 3. Instala las dependencias del proyecto:
 
@@ -40,7 +46,11 @@ La aplicación está desplegada en Netlify. Puedes acceder a ella haciendo clic 
 - Vite
 - JavaScript
 - React-Bootstrap
-- Bootstrap
+- Bootstrap5
+- Bootstrap Icons
+- React-router-dom
+- React-hook-form
+- Json-server (para pruebas de desarrollo)
 - Webpack
 - CSS3
 
