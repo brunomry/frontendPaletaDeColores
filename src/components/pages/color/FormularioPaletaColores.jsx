@@ -1,5 +1,6 @@
 import { Button, Form, FormLabel } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const FormularioPaletaColores = ({
   titulo,
@@ -9,6 +10,13 @@ const FormularioPaletaColores = ({
   deshabilitado,
   ocultar,
 }) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
+
   return (
     <>
       <section className="container mainPage sectionForm mx-md-auto rounded-3 shadow bg-white my-5 px-2">
@@ -21,13 +29,30 @@ const FormularioPaletaColores = ({
               placeholder="Ingrese un color. Ej: green"
               className="inputColor align-content-start py-3"
               disabled={deshabilitado}
+              {...register("nombreColor", {
+                required: "El nombre del color es obligatorio",
+                minLength: {
+                  value: 3,
+                  message:
+                    "El nombre del color debe tener como mínimo 3 caracteres",
+                },
+                maxLength: {
+                  value: 15,
+                  message:
+                    "El nombre del color debe tener como máximo 15 caracteres",
+                },
+              })}
             />
+            <Form.Text className="text-danger fw-medium">
+              {errors.nombreColor?.message}
+            </Form.Text>
             <FormLabel>También puede seleccionar un color: </FormLabel>
             <Form.Control
               type="color"
               placeholder="Ingrese un color. Ej: green"
               className="inputColor align-content-start py-3"
               disabled={deshabilitado}
+              {...register("codigoHexadecimal")}
             />
           </Form.Group>
           <div className="text-end d-flex gap-2 justify-content-end flex-wrap">
