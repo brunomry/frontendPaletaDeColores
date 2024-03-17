@@ -2,7 +2,7 @@ import { Button, Form, FormLabel } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   crearColorAPI,
   editarColorAPI,
@@ -27,10 +27,15 @@ const FormularioPaletaColores = ({
 
   const { id } = useParams();
   const navegacion = useNavigate();
+  const [color, setColor] = useState("");
+
+  const colorId = id ?? "";
 
   useEffect(() => {
+    if (colorId != "") {
       cargarDatosColor();
-    }, []);
+    }
+  }, [colorId]);
 
   const cargarDatosColor = async () => {
     try {
@@ -39,7 +44,7 @@ const FormularioPaletaColores = ({
       if (respuesta.status === 200) {
         const colorEncontrado = await respuesta.json();
         setValue("nombreColor", colorEncontrado.nombreColor);
-        // setValue("codigoHexadecimal", colorEncontrado.codigoHexadecimal);
+        setColor(colorEncontrado);
       }
     } catch (error) {
       console.log(error);
@@ -85,31 +90,30 @@ const FormularioPaletaColores = ({
     }
   };
 
-  // const [color, setColor] = useState("");
-  // const [selectedColor, setSelectedColor] = useState("#000000");
-
-  // const handleColorChange = (e) => {
-  //   setSelectedColor(e.target.value);
-  //   setColor(e.target.value);
-  // };
-
+  let estilo
+  if(editar || verDetalle){
+    estilo = {
+      background: color.nombreColor
+    }
+  }
+ 
   return (
     <>
-      <section className="container mainPage sectionForm mx-md-auto rounded-3 shadow bg-white my-5 px-2">
+      <div className="mainPage container">
+      <section className={`sectionForm mx-md-auto rounded-3 shadow bg-white my-5 px-2 px-md-4 ${(editar || verDetalle) ? "py-4" : "py-5"} `}>
         <h1 className="text-center my-4">{titulo}</h1>
         <Form
           className="d-flex flex-column"
           onSubmit={handleSubmit(colorValidado)}
         >
           <div className="mb-5 formGroup d-flex flex-column gap-3 justify-content-center align-items-center py-5 px-2">
-            <div className="bg-danger containerColor border border-2 border-dark "></div>
+            <div className={`border containerColor border-2 border-dark ${(editar || verDetalle) ? "" : "d-none"}`} style={estilo}></div>
             <Form.Group>
               <Form.Control
                 type="text"
                 placeholder="Ingrese un color. Ej: green"
                 className="inputColor align-content-start py-3"
                 disabled={deshabilitado}
-                // value={color}
                 {...register("nombreColor", {
                   required: "El nombre del color es obligatorio",
                   minLength: {
@@ -128,42 +132,30 @@ const FormularioPaletaColores = ({
                 {errors.nombreColor?.message}
               </Form.Text>
             </Form.Group>
-
-            {/* <Form.Group>
-              <FormLabel>También puede seleccionar un color: </FormLabel>
-              <Form.Control
-                type="color"
-                placeholder="Ingrese un color. Ej: green"
-                className="inputColor align-content-start py-3"
-                disabled={deshabilitado}
-                // value={selectedColor} 
-                // onChange={handleColorChange} 
-                {...register("codigoHexadecimal")}
-              />
-            </Form.Group> */}
           </div>
-          <div className="text-end d-flex gap-2 justify-content-end flex-wrap">
+          <div className="text-end d-flex gap-2 justify-content-end flex-wrap pb-3">
             <Button
               type="submit"
-              as={Link}
-              className={`px-4 py-2 rounded-2 text-decoration-none text-white ${
-                ocultar ? "d-none" : "btnGuardar px-4"
-              }`}
+              variant="primary"
+              className={`${ocultar ? "d-none" : "px-4"}`}
+              disabled={deshabilitado}
             >
               Agregar
             </Button>
-            <Link
-              className={`px-3 py-2 rounded-2 text-decoration-none text-white ${
-                verDetalle ? "btn btn-secondary px-5" : "btnBorrar"
+            <Button
+              className={`btn ${
+                verDetalle ? "btn-secondary px-5" : "btn-danger"
               }`}
               as={Link}
               to="/"
             >
               {boton}
-            </Link>
+            </Button>
           </div>
         </Form>
       </section>
+      </div>
+     
     </>
   );
 };

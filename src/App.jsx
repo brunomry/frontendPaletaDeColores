@@ -39,7 +39,7 @@ function App() {
           }
         ></Route>
         <Route
-          path="/verDetalle/:d"
+          path="/verDetalle/:id"
           element={
             <FormularioPaletaColores
               deshabilitado={true}

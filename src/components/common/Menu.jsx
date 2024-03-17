@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 
 const Menu = () => {
   return (
-    <header className="py-3">
-      <Navbar expand="md" className="bg-body-tertiary">
+    <header className="">
+      <Navbar expand="md" className="bg-body-tertiary py-3">
         <Container className="d-flex flex-md-column gap-3">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

@@ -52,10 +52,7 @@ export const editarColorAPI = async (colorModificado, id) => {
 export const borrarColorAPI = async (id) => {
   try {
     const respuesta = await fetch(`${URL_Colores}/${id}`,{
-      method:"DELETE",
-      headers: {
-        "Content-Type":"application/json"
-      }
+      method:"DELETE"
     });
     return respuesta;
   } catch (error) {

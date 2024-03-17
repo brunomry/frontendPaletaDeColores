@@ -1,8 +1,16 @@
 {
   "colores": [
     {
-      "nombreColor":"black",
-      "codigoHexadecimal":"#000000"
+      "nombreColor": "black",
+      "id": "ed39"
+    },
+    {
+      "nombreColor": "green",
+      "id": "d6e1"
+    },
+    {
+      "nombreColor": "#fea",
+      "id": "2dfe"
     }
   ]
 }

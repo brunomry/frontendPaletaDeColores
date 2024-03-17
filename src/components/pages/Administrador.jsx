@@ -24,7 +24,7 @@ const Administrador = () => {
   return (
     <>
       <section className="container mainPage py-5">
-        <div className="d-flex flex-column gap-2 flex-sm-row justify-content-around align-items-center my-md-5 ">
+        <div className="d-flex flex-column gap-2 flex-sm-row justify-content-around align-items-center ">
           <h1 className="">Paleta de colores</h1>
           <Button
             className="btn btn-primary"
