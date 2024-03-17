@@ -15,7 +15,7 @@ const Administrador = () => {
   const consultarAPI = async () => {
     try {
       const respuesta = await leerColoresAPI();
-      setColores(respuesta);
+      setColores(respuesta.colores);
     } catch (error) {
       console.log(error);
     }
@@ -25,7 +25,7 @@ const Administrador = () => {
     <>
       <section className="container mainPage py-5">
         <div className="d-flex flex-column gap-2 flex-sm-row justify-content-around align-items-center ">
-          <h1 className="">Paleta de colores</h1>
+          <h1>Paleta de colores</h1>
           <Button
             className="btn btn-primary"
             title="Agregar color"
@@ -38,7 +38,7 @@ const Administrador = () => {
         <article className="d-flex containerCards justify-content-center flex-wrap gap-3 mx-auto mt-5">
           {colores.map((color) => (
             <TarjetaColor
-              key={color.id}
+              key={color._id}
               color={color}
               setColores={setColores}
             />

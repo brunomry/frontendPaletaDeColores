@@ -11,7 +11,7 @@ import {
 
 const FormularioPaletaColores = ({
   titulo,
-  editar,
+  editar,  
   verDetalle,
   boton,
   deshabilitado,
@@ -111,7 +111,7 @@ const FormularioPaletaColores = ({
             <Form.Group>
               <Form.Control
                 type="text"
-                placeholder="Ingrese un color. Ej: green"
+                placeholder="Ej: green, #000000, rgb(0,0,0), rgba(0,0,0,0)"
                 className="inputColor align-content-start py-3"
                 disabled={deshabilitado}
                 {...register("nombreColor", {
@@ -122,9 +122,9 @@ const FormularioPaletaColores = ({
                       "El nombre del color debe tener como mínimo 3 caracteres",
                   },
                   maxLength: {
-                    value: 15,
+                    value: 21,
                     message:
-                      "El nombre del color debe tener como máximo 15 caracteres",
+                      "El nombre del color debe tener como máximo 21 caracteres",
                   },
                 })}
               />

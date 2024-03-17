@@ -23,7 +23,7 @@ const TarjetaColor = ({color, setColores}) => {
       cancelButtonText: 'Cancelar',
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const respuesta = await borrarColorAPI(color.id);
+        const respuesta = await borrarColorAPI(color._id);
         if (respuesta.status === 200) {
           Swal.fire({
             title: 'Color eliminado!',
@@ -31,7 +31,7 @@ const TarjetaColor = ({color, setColores}) => {
             icon: 'success',
           });
           const listaColores = await leerColoresAPI();
-          setColores(listaColores);
+          setColores(listaColores.colores);
         } else {
           Swal.fire({
             title: 'Ocurrió un error!',
@@ -51,8 +51,8 @@ const TarjetaColor = ({color, setColores}) => {
           <span className="containerCardColor border border-2 border-dark" style={estilo}></span>
         </Card.Text>
         <div className='d-flex'>
-        <Button variant="secondary" className='border-0 mx-auto' title="Ver más" as={Link} to={`/verDetalle/${color.id}`}><i className="bi bi-eye-fill fs-4"></i></Button>
-        <Button variant="warning" className='border-0 mx-auto' title="Editar color"  as={Link} to={`/editar/${color.id}`}><i className="bi bi-pencil-square fs-4"></i></Button>
+        <Button variant="secondary" className='border-0 mx-auto' title="Ver más" as={Link} to={`/verDetalle/${color._id}`}><i className="bi bi-eye-fill fs-4"></i></Button>
+        <Button variant="warning" className='border-0 mx-auto' title="Editar color"  as={Link} to={`/editar/${color._id}`}><i className="bi bi-pencil-square fs-4"></i></Button>
         <Button variant="danger" className='border-0 mx-auto' title="Borrar color" onClick={borrarColor}><i className="bi bi-trash fs-4"></i></Button>
         </div>
       </Card.Body>

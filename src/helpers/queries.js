@@ -1,4 +1,5 @@
 const URL_Colores = import.meta.env.VITE_API_COLORES;
+const URL_Color = import.meta.env.VITE_API_COLOR;
 
 export const leerColoresAPI = async () => {
   try {
@@ -12,7 +13,7 @@ export const leerColoresAPI = async () => {
 
 export const obtenerColorAPI = async (id) => {
   try {
-    const respuesta = await fetch(`${URL_Colores}/${id}`);
+    const respuesta = await fetch(`${URL_Color}/${id}`);
     return respuesta;
   } catch (error) {
     console.log(error);
@@ -24,9 +25,9 @@ export const crearColorAPI = async (colorNuevo) => {
     const respuesta = await fetch(URL_Colores, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type":"application/json",
       },
-      body: JSON.stringify(colorNuevo),
+      body: JSON.stringify(colorNuevo)
     });
     return respuesta;
   } catch (error) {
@@ -36,7 +37,7 @@ export const crearColorAPI = async (colorNuevo) => {
 
 export const editarColorAPI = async (colorModificado, id) => {
   try {
-    const respuesta = await fetch(`${URL_Colores}/${id}`,{
+    const respuesta = await fetch(`${URL_Color}/${id}`,{
       method: "PUT",
       headers: {
         "Content-Type":"application/json",
@@ -51,7 +52,7 @@ export const editarColorAPI = async (colorModificado, id) => {
 
 export const borrarColorAPI = async (id) => {
   try {
-    const respuesta = await fetch(`${URL_Colores}/${id}`,{
+    const respuesta = await fetch(`${URL_Color}/${id}`,{
       method:"DELETE"
     });
     return respuesta;
