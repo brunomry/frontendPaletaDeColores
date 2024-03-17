@@ -1,9 +1,26 @@
 import React from "react";
-import { Button} from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import TarjetaColor from "./pages/color/TarjetaColor";
+import TarjetaColor from "./color/TarjetaColor.jsx";
+import { useState, useEffect } from "react";
+import { leerColoresAPI } from "../../helpers/queries.js";
 
 const Administrador = () => {
+  const [colores, setColores] = useState([]);
+
+  useEffect(() => {
+    consultarAPI();
+  }, []);
+
+  const consultarAPI = async () => {
+    try {
+      const respuesta = await leerColoresAPI();
+      setColores(respuesta);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <section className="container mainPage py-5">
@@ -11,7 +28,7 @@ const Administrador = () => {
           <h1 className="">Paleta de colores</h1>
           <Button
             className="btn btn-primary"
-            title="Agregar tarea"
+            title="Agregar color"
             to="/crear"
             as={Link}
           >
@@ -19,15 +36,13 @@ const Administrador = () => {
           </Button>
         </div>
         <article className="d-flex containerCards justify-content-center flex-wrap gap-3 mx-auto mt-5">
-          <TarjetaColor></TarjetaColor>
-          <TarjetaColor></TarjetaColor>
-          <TarjetaColor></TarjetaColor>
-          <TarjetaColor></TarjetaColor>
-          <TarjetaColor></TarjetaColor>
-          <TarjetaColor></TarjetaColor>
-          <TarjetaColor></TarjetaColor>
-          <TarjetaColor></TarjetaColor>
-          <TarjetaColor></TarjetaColor>
+          {colores.map((color) => (
+            <TarjetaColor
+              key={color.id}
+              color={color}
+              setColores={setColores}
+            />
+          ))}
         </article>
       </section>
     </>

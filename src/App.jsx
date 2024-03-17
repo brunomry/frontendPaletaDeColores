@@ -2,11 +2,11 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./components/common/Footer.jsx";
 import Menu from "./components/common/Menu.jsx";
-import Administrador from "./components/Administrador.jsx";
+import Administrador from "./components/pages/Administrador.jsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FormularioPaletaColores from "./components/pages/color/FormularioPaletaColores.jsx";
 import "bootstrap-icons/font/bootstrap-icons.min.css";
-import Error404 from "./components/Error404.jsx";
+import Error404 from "./components/pages/Error404.jsx";
 
 function App() {
   return (

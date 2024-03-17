@@ -24,7 +24,7 @@ export const crearColorAPI = async (colorNuevo) => {
     const respuesta = await fetch(URL_Colores, {
       method: "POST",
       headers: {
-        "Content-Type": "Application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(colorNuevo),
     });
@@ -39,7 +39,7 @@ export const editarColorAPI = async (colorModificado, id) => {
     const respuesta = await fetch(`${URL_Colores}/${id}`,{
       method: "PUT",
       headers: {
-        "Content-Type":"Application/json",
+        "Content-Type":"application/json",
       },
       body: JSON.stringify(colorModificado)
     });
@@ -49,12 +49,12 @@ export const editarColorAPI = async (colorModificado, id) => {
   }
 }
 
-export const borrarColor = async (id) => {
+export const borrarColorAPI = async (id) => {
   try {
     const respuesta = await fetch(`${URL_Colores}/${id}`,{
       method:"DELETE",
       headers: {
-        "Content-Type":"Application/json"
+        "Content-Type":"application/json"
       }
     });
     return respuesta;
