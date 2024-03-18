@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { leerColoresAPI } from "../../helpers/queries.js";
 
 const Administrador = () => {
-  const [colores, setColores] = useState([]);
+  const [colors, setColores] = useState([]);
 
   useEffect(() => {
     consultarAPI();
@@ -36,7 +36,7 @@ const Administrador = () => {
           </Button>
         </div>
         <article className="d-flex containerCards justify-content-center flex-wrap gap-3 mx-auto mt-5">
-          {colores.map((color) => (
+          {colors.map((color) => (
             <TarjetaColor
               key={color._id}
               color={color}
