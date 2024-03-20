@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import TarjetaColor from "./color/TarjetaColor.jsx";
@@ -6,7 +5,7 @@ import { useState, useEffect } from "react";
 import { leerColoresAPI } from "../../helpers/queries.js";
 
 const Administrador = () => {
-  const [colors, setColores] = useState([]);
+  const [colores, setColores] = useState([]);
 
   useEffect(() => {
     consultarAPI();
@@ -36,7 +35,7 @@ const Administrador = () => {
           </Button>
         </div>
         <article className="d-flex containerCards justify-content-center flex-wrap gap-3 mx-auto mt-5">
-          {colors.map((color) => (
+          {colores.map((color) => (
             <TarjetaColor
               key={color._id}
               color={color}

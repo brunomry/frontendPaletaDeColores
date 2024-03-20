@@ -31,7 +31,7 @@ const TarjetaColor = ({color, setColores}) => {
             icon: 'success',
           });
           const listaColores = await leerColoresAPI();
-          setColores(listaColores.colors);
+          setColores(listaColores.colores);
         } else {
           Swal.fire({
             title: 'Ocurrió un error!',
