@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Error404 = () => {
   return (
     <section className="mainPage text-center pb-5">
-      <img src={error} alt="error 404" />
+      <img src={error} alt="error 404" className="img-fluid"/>
       <div>
         <Button variant="success" as={Link} to="/">Volver a la página principal</Button>
       </div>
