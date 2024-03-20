@@ -15,7 +15,7 @@ const Administrador = () => {
   const consultarAPI = async () => {
     try {
       const respuesta = await leerColoresAPI();
-      setColores(respuesta.colores);
+      setColores(respuesta.colors);
     } catch (error) {
       console.log(error);
     }
